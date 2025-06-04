@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './global/_variables.scss';
+@import './global/_fonts.scss';
+@import './global/_base.scss';
+@import './global/_form.scss';
+
+@import './utils/_helpers.scss';
+
+@import './layout/_section.scss';
+@import './components/_container.scss';
+
+@import './components/_loader.scss';
+@import './components/_button.scss';
+@import './components/_checkbox.scss';
+@import './components/_card.scss';
+@import './components/_burger.scss';
+
+

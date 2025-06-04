@@ -1,0 +1,12 @@
+.bg-gradient {
+    background:  var(--color-gradient);
+}
+
+.field-bg {
+    transition: background-color 0.3s ease-in-out;
+    background-color: var(--fields-bg-color);
+
+    &.hover:hover {
+        background-color: var(--fields-bg-color-dark);
+    }
+}

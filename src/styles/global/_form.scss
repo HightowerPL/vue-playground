@@ -1,0 +1,61 @@
+input,
+textarea,
+select {
+    color: var(--fields-font-color);
+    border: 1px solid var(--fields-border-color);
+    background-color: var(--fields-bg-color);
+    padding: 12px;
+    font-size: var(--fields-font-size);
+
+    &::placeholder {
+        opacity: .5;
+        color: var(--fields-placeholder-color);
+        font-size: var(--fields-font-size);
+
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+select {
+    position: relative;
+    appearance: none;
+    background: url('@/assets/icons/dropdown-icon.svg');
+    background-color: var(--fields-bg-color);
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 24px 24px;
+    padding-right: 48px;
+
+    &::placeholder {
+        color: var(--color-white);
+    }
+
+    option {
+        color: var(--select-box-option-font-color);
+    }
+}
+
+label {
+    font-family: "Bebas Neue", serif;
+    font-weight: bold;
+    color: var(--fields-label-font-color);
+    font-size: var(--fields-font-size);
+}
+
+.error {
+    color: var(--color-error);
+    font-size: 12px;
+    margin-top: 4px;
+    font-family: "Open Sans", serif;
+    font-weight: 400;
+    text-align: left;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+
+}

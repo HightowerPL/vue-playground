@@ -1,0 +1,77 @@
+<template>
+    <div class="py-8 xl:pt-10" id="scroll-area">
+        <div class="cont mx-auto">
+            <h2 class="mb-12 text-xl">Cats - Infinite List</h2>
+            <div
+                v-if="cats.length > 0"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+            >
+                <TransitionGroup name="fade-up" mode="out-in">
+                    <picture
+                        v-for="(cat, index) in cats"
+                        :key="cat.id"
+                        :data-index="index"
+                        class="relative block w-full pb-[100%] overflow-hidden "
+                    >
+                        <img
+                            :src="cat.url"
+                            alt="cat"
+                            class="absolute top-0 left-0 w-full h-full object-cover"
+                        >
+                    </picture>
+                </TransitionGroup>
+            </div>
+
+            <div class="col-span-3 pt-10 text-center">
+                <span class="loader" id="load-more-trigger"></span>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup lang="ts">
+
+import apiGetCats from '../../api/cats.js';
+import { ref, onMounted } from 'vue';
+
+const cats = ref([]);
+
+
+const setObserver = () => {
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5
+    }
+
+    const observer = new IntersectionObserver(() => {
+        getCats();
+    }, options);
+
+    observer.observe(document.querySelector('#load-more-trigger'));
+}
+onMounted(() => {
+    setTimeout(() => {
+        setObserver();
+    }, 2000);
+
+});
+
+const getCats = () => {
+    apiGetCats()
+        .then((response: Object) => {
+            if (cats.value.length === 0) {
+                cats.value = response.data;
+            } else {
+                cats.value = cats.value.concat(response.data);
+            }
+        })
+}
+
+
+
+</script>
+
+<style scoped lang="scss">
+
+</style>

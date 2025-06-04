@@ -1,0 +1,35 @@
+.card {
+    padding: 24px;
+    background-color: var(--card-bg-color);
+    border-radius: var(--card-border-radius);
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 4px 25px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+
+    @media screen and (min-width: 768px) {
+        padding: 32px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        padding: 40px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        padding: 48px;
+    }
+
+    &--white {
+        --card-bg-color: #fff;
+        --fields-bg-color: #f9f9f9;
+        --fields-label-font-color: var(--color-black);
+        --fields-placeholder-color: #0000008c;
+        --fields-font-color: #000;
+    }
+
+    &--green {
+        --card-bg-color: var(--color-green);
+        --fields-label-font-color: var(--color-black);
+        --fields-placeholder-color: var(--color-white-transparent);
+        --fields-font-color: #fff;
+
+    }
+}
