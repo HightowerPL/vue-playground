@@ -33,9 +33,7 @@ A production-ready Vue 3 playground demonstrating advanced patterns and best pra
 1. **Todo List** - CRUD operations with transitions
 2. **Form Validation** - Multi-field validation showcase
 3. **Products** - API integration with FakeStore API
-4. **Teams/Players** - CRUD management with routing
-5. **Basketball Match** - Complex state management
-6. **Cats Gallery** - TheCat API integration
+4. **Cats Gallery** - TheCat API integration
 
 ## 📦 Installation
 ```bash

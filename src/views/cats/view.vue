@@ -14,7 +14,7 @@
                     v-for="(cat, index) in cats"
                     :key="cat.id"
                     :data-index="index"
-                    class="relative block w-full pb-[150%] overflow-hidden rounded opacity-50"
+                    class="relative block w-full pb-[150%] overflow-hidden rounded-xl opacity-50"
                 >
                     <img
                         :src="cat.url"

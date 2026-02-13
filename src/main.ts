@@ -4,7 +4,7 @@ import App from './App.vue'
 import DefaultLayout from './layout/DefaultLayout.vue'
 import { router } from './router'
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { RiDoubleQuotesL, BiChatLeftQuoteFill, BiArrowRepeat, BiPeopleFill, IoBasketballSharp, FaPeopleArrows, IoPencil, IoPencilSharp, FaChevronDown, FaCat, FaFlag, RiZhihuFill, IoCartSharp, RiHome5Fill, CoTodoist, SiFormstack, FaWpforms, MdAddbox, FaTrash, IoCloseOutline } from "oh-vue-icons/icons";
+import { RiDoubleQuotesL, MdSkipnextRound, BiChatLeftQuoteFill, BiArrowRepeat, BiPeopleFill, IoBasketballSharp, FaPeopleArrows, IoPencil, IoPencilSharp, FaChevronDown, FaCat, FaFlag, RiZhihuFill, IoCartSharp, RiHome5Fill, CoTodoist, SiFormstack, FaWpforms, MdAddbox, FaTrash, IoCloseOutline, BiPauseFill, BiPlayFill, BiArrowRightCircleFill } from "oh-vue-icons/icons";
 import SlideUpDown from 'vue-slide-up-down'
 import FilledButton from './components/Buttons/FilledButton.vue'
 import OutlinedButton from './components/Buttons/OutlinedButton.vue'
@@ -14,6 +14,7 @@ import Textfield from './components/fields/Textfield.vue';
 
 addIcons(
     RiDoubleQuotesL,
+    MdSkipnextRound,
     BiChatLeftQuoteFill,
     BiArrowRepeat,
     BiPeopleFill,
@@ -31,8 +32,11 @@ addIcons(
     SiFormstack, 
     FaWpforms, 
     MdAddbox, 
-    FaTrash, 
-    IoCloseOutline
+    FaTrash,
+    IoCloseOutline,
+    BiPauseFill,
+    BiPlayFill,
+    BiArrowRightCircleFill
 );
 
 const app = createApp(App)
