@@ -1,9 +1,9 @@
 <template>
     <button
         type="button"
-        class="btn "
+        class="btn btn--outlined"
         :disabled="isLoading"
-        :class="`btn-${color} `"
+        :class="`border-${color} hover:bg-${color} ${small ? 'btn--small' : ''} ${full ? 'w-full' : ''}`"
         >
           <span 
             class="btn__inner"
@@ -33,6 +33,14 @@
         type: Boolean,
         default: false
       },
+      small: {
+        type: Boolean,
+        default: false
+      },
+      full: {
+        type: Boolean,
+        default: false
+      }
     })
 
 </script>

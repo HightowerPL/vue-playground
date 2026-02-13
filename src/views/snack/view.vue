@@ -18,17 +18,17 @@
 
             <div class="grid md:grid-cols-3 gap-4">
 
-                <PrimaryButton color="green" @click="openSnack('success')">
+                <FilledButton color="green" @click="openSnack('success')">
                     Show 'Success' Snackbar
-                </PrimaryButton>
+                </FilledButton>
 
-                <PrimaryButton color="red" @click="openSnack('error')">
+                <FilledButton color="red" @click="openSnack('error')">
                     Show 'Error' Snackbar
-                </PrimaryButton>
+                </FilledButton>
 
-                <PrimaryButton color="blue" @click="openSnack('info')">
+                <FilledButton color="blue" @click="openSnack('info')">
                     Show 'Info' Snackbar
-                </PrimaryButton>
+                </FilledButton>
 
             </div>
 
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import PrimaryButton from '@/components/buttons/PrimaryButton.vue';
+import FilledButton from '@/components/buttons/FilledButton.vue';
 import { ref } from "vue";
 import { useSnackbar } from '@/store/snackbar.ts'
 

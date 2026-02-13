@@ -1,6 +1,6 @@
 <template>
     <div class="multi-select-dropdown" ref="dropdownRef">
-        <label for="" class="text-left">{{  label }}</label>
+        <label for="" class="form__label">{{  label }}</label>
       <div 
         class="dropdown-header" 
         @click="toggleDropdown"
@@ -46,7 +46,7 @@
             v-for="option in filteredOptions" 
             :for="option[trackBy]"
             :key="option[trackBy]"
-            class=" checkbox checkbox--white"
+            class=" checkbox checkbox--green"
             :class="{ 'checked': isSelected(option) }"
           >
             <input 
@@ -78,9 +78,9 @@
     </div>
   </template>
   
-  <script setup>
+<script setup lang="ts">
   import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
-import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
+  import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
   
   const props = defineProps({
     options: {
@@ -124,17 +124,22 @@ import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
   const isOpen = ref(false)
   const searchQuery = ref('')
   
+  // Memoized computation - only recalculates when modelValue or options change
   const selectedItems = computed(() => {
-    return props.options.filter(option => 
-      props.modelValue.includes(option[props.trackBy])
+    // Create a Set for O(1) lookup performance instead of O(n) with includes()
+    const selectedSet = new Set(props.modelValue);
+    return props.options.filter(option =>
+      selectedSet.has(option[props.trackBy])
     )
   })
-  
+
+  // Memoized filtered options - only recalculates when searchQuery or options change
   const filteredOptions = computed(() => {
     if (!searchQuery.value) return props.options
-    
+
     const query = searchQuery.value.toLowerCase()
-    return props.options.filter(option => 
+    // Filter with case-insensitive search
+    return props.options.filter(option =>
       option[props.displayKey].toLowerCase().includes(query)
     )
   })
@@ -166,8 +171,11 @@ import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
     emit('update:modelValue', newValue)
   }
   
+  // Memoized selection check using Set for O(1) lookup
+  const selectedSet = computed(() => new Set(props.modelValue));
+
   const isSelected = (option) => {
-    return props.modelValue.includes(option[props.trackBy])
+    return selectedSet.value.has(option[props.trackBy])
   }
   
   const selectAll = () => {
@@ -322,7 +330,7 @@ import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
   .no-results {
     padding: 12px;
     text-align: center;
-    color: #999;
+    color: #fff;
   }
   
   .dropdown-footer {

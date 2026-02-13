@@ -3,7 +3,7 @@
     <div class="section">
       <div class="container">
         <div class="grid grid-cols-12 gap-10 items-center">
-          <div class="col-span-6 text-white text-left">
+          <div class="col-span-6 text-left">
             <h1 class="mb-7 text-xxl ">
               Hello World
             </h1>
@@ -19,10 +19,6 @@
             </picture>
           </div>
         </div>
-
-
-        
-
       </div>
     </div>
 
@@ -37,7 +33,7 @@
     <section class="section">
       <div class="container-lg grid grid-cols-3 gap-10">
 
-        <quoteCard
+        <QuoteCard
           v-for="(quote, index) in quotes"
           :key="index"
           :quote="quote"
@@ -52,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import quoteCard from '../../components/cards/quoteCard.vue'
+import QuoteCard from '../../components/cards/QuoteCard.vue'
 
 
 const quotes = [

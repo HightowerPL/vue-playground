@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 
-const id = ref(Math.floor(Math.random() * 10000000))
+const id = ref<number>(Math.floor(Math.random() * 10000000))
 const props = defineProps({
     modelValue: [
       Boolean,

@@ -1,13 +1,12 @@
 <template>
-    <div class="container">
+    <div class="container-fluid">
         <div class="product-grid py-8 xl:pt-10">
-            <div class="filters">
-                Here will be filters
+            <div class="filters bg-green min-h-[400px] ">
+                
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-6 2xl:gap-8">
                 <template v-if="products.length > 0">
-                    <productCard v-for="product in products" :key="product.id" :product="product" />
+                    <ProductCard v-for="product in products" :key="product.id" :product="product" />
                 </template>
             </div>
         </div>
@@ -18,8 +17,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { apiGetProducts } from '../../api/products.js'
-import productCard from '../../components/cards/productCard.vue'
-
+import ProductCard from '../../components/cards/ProductCard.vue'
 
 const products = ref([])
 
@@ -46,6 +44,7 @@ const getProducts = () => {
 
     @media (min-width: 1280px) {
         grid-template-columns: 23.64% auto;
+        gap: 36px;
     }
 }
 </style>

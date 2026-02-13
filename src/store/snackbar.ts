@@ -1,11 +1,12 @@
 import { defineStore } from 'pinia';
 
 interface snackBarType {
+  isSnackbarOpen?: boolean,
   content: string | object,
   type: 'success' | 'error',
   operationType: string,
-  buttonUrl?: object | string | null,
-  timeout?: number
+  buttonUrl?: string,
+  timeout?: number,
 }
 
 export const useSnackbar = defineStore('snackbar', {
@@ -14,8 +15,8 @@ export const useSnackbar = defineStore('snackbar', {
     content: '',
     type: 'success',
     operationType: 'Submit',
-    buttonUrl: null,
-    timeout: 5000,
+    buttonUrl: '',
+    timeout: 8000,
   }),
   getters: {
     isOpen: (state) => state.isSnackbarOpen,

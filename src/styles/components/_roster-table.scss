@@ -1,0 +1,35 @@
+.roster-table {
+
+    &__head {
+        th,td {
+            padding: 0.5rem;
+            border-bottom: 2px solid var(--color-green-light);
+        }
+    }
+
+    &__body {
+        &-cell {
+            padding: .75rem 0.5rem;
+        }
+    }
+
+    th,td {
+        max-width: 100px;
+        text-align: center;
+
+        input {
+            width: 100%;
+            text-align: center;
+        }
+
+        &.number {
+            max-width: 50px;
+        }
+
+        &.name {
+            min-width: 250px;
+        }
+    }
+
+    
+}

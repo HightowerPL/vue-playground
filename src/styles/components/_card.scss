@@ -1,20 +1,21 @@
+:root {
+    --card-bg-color: var(--color-black-light);
+    --card-font-color: var(--color-white);
+    --card-border-radius: var(--border-radius);
+    --card-padding: 24px;
+    --card-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 4px 25px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
 .card {
-    padding: 24px;
+    width: 100%;
+    padding: var(--card-padding);
     background-color: var(--card-bg-color);
     border-radius: var(--card-border-radius);
-    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 4px 25px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 5px rgba(0, 0, 0, 0.1);
+    color: var(--card-font-color);
     transition: all 0.3s ease-in-out;
 
     @media screen and (min-width: 768px) {
-        padding: 32px;
-    }
-
-    @media screen and (min-width: 1024px) {
-        padding: 40px;
-    }
-
-    @media screen and (min-width: 1280px) {
-        padding: 48px;
+        --card-padding: 32px;
     }
 
     &--white {

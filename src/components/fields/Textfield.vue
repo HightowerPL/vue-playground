@@ -1,11 +1,11 @@
 <template>
     <div class="text-left relative w-full">
-        <label for="fname" class="block">{{label}}<span v-if="required" class="text-rose">&nbsp;&nbsp;*</span></label>
+        <label for="fname" class="form__label">{{label}}<span v-if="required" class="text-rose">&nbsp;&nbsp;*</span></label>
         <input
             v-model="model"
             :type="type"
             :name="name"
-            class="w-full text-sm"
+            class="form__input w-full text-sm"
             :class="[
                 model ? 'filled' : '',
                 errorMessage ? 'border-rose' : '',

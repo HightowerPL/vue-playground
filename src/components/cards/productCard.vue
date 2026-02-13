@@ -1,15 +1,15 @@
 <template>
-    <article class="bg-white p-4 shadow-md flex flex-col items-start gap-4 text-black text-left">
-        <picture class="block w-full relative aspect-square">
+    <article class="bg-lightBlack p-6 pb-8 shadow-md flex flex-col items-start gap-4 text-white text-left">
+        <picture class="block w-full relative aspect-square bg-white">
             <img
-                class="absolute top-0 left-0 w-full h-full object-contain"
+                class="absolute top-[5%] left-[5%] w-[90%] h-[90%] object-contain object-center"
                 :src="product.image"
                 :alt="product.name"
             >
         </picture>
         <div class="grow h-full">
-            <h2 class="text-lg mb-2 min-h-72">{{ product.title }}</h2>
-            <p class="text-sm">{{ product.description }}</p>
+            <h2 class="text-lg mb-2 min-h-72 text-green">{{ product.title }}</h2>
+            <p class="text-sm line-clamp-5 trim-3 text-3-lines">{{ product.description }}</p>
         </div>
 
         <div class="flex w-full flex-nowrap items-center justify-between">

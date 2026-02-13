@@ -1,16 +1,16 @@
 .checkbox {
-    --checkboxActiveColor: var(--fields-bg-color);
-    --checkboxIconFilter: invert(100%) sepia(0%) saturate(3754%) hue-rotate(147deg) brightness(127%) contrast(100%);
+    --checkbox-active-color: var(--fields-bg-color);
+    --checkbox-icon-filter: invert(100%) sepia(0%) saturate(3754%) hue-rotate(147deg) brightness(127%) contrast(100%);
 
-    &--white {   
-        --checkboxActiveColor: var(--color-green);
+    &--green {   
+        --checkbox-active-color: var(--color-green);
         --fields-bg-color: var(--color-green);
     }
 
     display: block;
     cursor: pointer;
     position: relative;
-    font-family: "Open Sans", serif;
+    font-family: var(--primary-font);
     font-weight: 300;
 
     &__label {
@@ -57,7 +57,7 @@
             transform: scale(0) rotate(-130deg);
             transition-timing-function: ease-out;
             transition: transform .2s;
-            filter: var(--checkboxIconFilter);
+            filter: var(--checkbox-icon-filter);
 
             .checked & {
                 transform: scale(1) rotate(0)

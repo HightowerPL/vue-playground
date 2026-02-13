@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`FilledButton > Snapshot Tests > matches snapshot for default state 1`] = `
+"<button type="button" class="btn btn--filled btn-green"><span class="btn__inner">Button</span>
+  <div class="loader-wrapper btn__loader" style="display: none;">
+    <div class="loader small green"></div>
+  </div>
+</button>"
+`;
+
+exports[`FilledButton > Snapshot Tests > matches snapshot for loading state 1`] = `
+"<button type="button" class="btn btn--filled btn-green" disabled=""><span class="btn__inner invisible">Loading...</span>
+  <div class="loader-wrapper btn__loader">
+    <div class="loader small green"></div>
+  </div>
+</button>"
+`;
+
+exports[`FilledButton > Snapshot Tests > matches snapshot for small full-width variant 1`] = `
+"<button type="button" class="btn btn--filled btn-rose btn--small w-full"><span class="btn__inner">Submit</span>
+  <div class="loader-wrapper btn__loader" style="display: none;">
+    <div class="loader small rose"></div>
+  </div>
+</button>"
+`;

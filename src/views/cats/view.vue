@@ -1,25 +1,28 @@
 <template>
     <div class="py-8 xl:pt-10" id="scroll-area">
-        <div class="cont mx-auto">
+        <div class="container-sm mx-auto">
             <h2 class="mb-12 text-xl">Cats - Infinite List</h2>
             <div
                 v-if="cats.length > 0"
-                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
             >
-                <TransitionGroup name="fade-up" mode="out-in">
-                    <picture
-                        v-for="(cat, index) in cats"
-                        :key="cat.id"
-                        :data-index="index"
-                        class="relative block w-full pb-[100%] overflow-hidden "
+                <motion.picture
+                    :initial="{ opacity: 0, transform: 'translateY(100px)' }"
+                    :whileInView="{ opacity: 1, transform: 'translateY(0)' }"
+                    :inViewOptions="{ amount: .3, once: true}"
+                    :whileHover="{scale: 1.1}"
+                    v-for="(cat, index) in cats"
+                    :key="cat.id"
+                    :data-index="index"
+                    class="relative block w-full pb-[150%] overflow-hidden rounded opacity-50"
+                >
+                    <img
+                        :src="cat.url"
+                        alt="cat"
+                        class="absolute top-0 left-0 w-full h-full object-cover"
                     >
-                        <img
-                            :src="cat.url"
-                            alt="cat"
-                            class="absolute top-0 left-0 w-full h-full object-cover"
-                        >
-                    </picture>
-                </TransitionGroup>
+                </motion.picture>
+
             </div>
 
             <div class="col-span-3 pt-10 text-center">
@@ -30,12 +33,11 @@
 </template>
 
 <script setup lang="ts">
-
+import { motion } from "motion-v";
 import apiGetCats from '../../api/cats.js';
 import { ref, onMounted } from 'vue';
 
 const cats = ref([]);
-
 
 const setObserver = () => {
     const options = {

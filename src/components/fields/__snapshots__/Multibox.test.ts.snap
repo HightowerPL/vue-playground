@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Multibox > Snapshot Tests > matches snapshot with no selection 1`] = `
+"<div data-v-7fd52700="" class="multi-select-dropdown"><label data-v-7fd52700="" for="" class="form__label">Select Options</label>
+  <div data-v-7fd52700="" class="dropdown-header">
+    <div data-v-7fd52700="" class="selected-items"><span data-v-7fd52700="" class="placeholder">Select items</span></div><svg data-v-7fd52700="" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 19.57 19.57" class="arrow">
+      <path fill="#14B8A6;" d="m4.79 7.29 5 5 5-5z" data-name="Path 1"></path>
+    </svg>
+  </div>
+  <div data-v-7fd52700="" class="dropdown-content" style="display: none;">
+    <div data-v-7fd52700="" class="search-box"><input data-v-7fd52700="" type="text" placeholder="Search..."></div>
+    <div data-v-7fd52700="" class="options-list"><label data-v-7fd52700="" for="1" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="1"><span data-v-7fd52700="" class="checkbox__label">Option 1</span></label><label data-v-7fd52700="" for="2" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="2"><span data-v-7fd52700="" class="checkbox__label">Option 2</span></label><label data-v-7fd52700="" for="3" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="3"><span data-v-7fd52700="" class="checkbox__label">Option 3</span></label><label data-v-7fd52700="" for="4" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="4"><span data-v-7fd52700="" class="checkbox__label">Basketball</span></label><label data-v-7fd52700="" for="5" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="5"><span data-v-7fd52700="" class="checkbox__label">Football</span></label>
+      <!--v-if-->
+    </div>
+    <div data-v-7fd52700="" class="dropdown-footer"><button data-v-7fd52700="" class="select-all"> Select All </button><button data-v-7fd52700="" class="clear-all"> Clear All </button></div>
+  </div>
+</div>"
+`;
+
+exports[`Multibox > Snapshot Tests > matches snapshot with selections 1`] = `
+"<div data-v-7fd52700="" class="multi-select-dropdown"><label data-v-7fd52700="" for="" class="form__label">Selected Options</label>
+  <div data-v-7fd52700="" class="dropdown-header">
+    <div data-v-7fd52700="" class="selected-items">
+      <div data-v-7fd52700="" class="selected-tags"><span data-v-7fd52700="" class="tag">Option 1 <button data-v-7fd52700="" class="remove-tag" type="button"> × </button></span><span data-v-7fd52700="" class="tag">Option 3 <button data-v-7fd52700="" class="remove-tag" type="button"> × </button></span></div>
+    </div><svg data-v-7fd52700="" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 19.57 19.57" class="arrow">
+      <path fill="#14B8A6;" d="m4.79 7.29 5 5 5-5z" data-name="Path 1"></path>
+    </svg>
+  </div>
+  <div data-v-7fd52700="" class="dropdown-content" style="display: none;">
+    <div data-v-7fd52700="" class="search-box"><input data-v-7fd52700="" type="text" placeholder="Search..."></div>
+    <div data-v-7fd52700="" class="options-list"><label data-v-7fd52700="" for="1" class="checkbox checkbox--green checked"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="1" checked=""><span data-v-7fd52700="" class="checkbox__label">Option 1</span></label><label data-v-7fd52700="" for="2" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="2"><span data-v-7fd52700="" class="checkbox__label">Option 2</span></label><label data-v-7fd52700="" for="3" class="checkbox checkbox--green checked"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="3" checked=""><span data-v-7fd52700="" class="checkbox__label">Option 3</span></label><label data-v-7fd52700="" for="4" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="4"><span data-v-7fd52700="" class="checkbox__label">Basketball</span></label><label data-v-7fd52700="" for="5" class="checkbox checkbox--green"><input data-v-7fd52700="" type="checkbox" class="checkbox__input" id="5"><span data-v-7fd52700="" class="checkbox__label">Football</span></label>
+      <!--v-if-->
+    </div>
+    <div data-v-7fd52700="" class="dropdown-footer"><button data-v-7fd52700="" class="select-all"> Select All </button><button data-v-7fd52700="" class="clear-all"> Clear All </button></div>
+  </div>
+</div>"
+`;

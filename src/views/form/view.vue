@@ -2,12 +2,12 @@
     <div class="max-w-[640px] w-11/12 mx-auto py-8 xl:pt-10">
 
         <form
-            class="card card--green mb-10"
+            class="form card mb-10"
             ref="form"
             @submit.prevent="handleForm"
         >
 
-        <h1 class="text-xl text-black font-bold mb-9">
+        <h1 class="text-xl text-green font-bold mb-9">
             Form validation
         </h1>
             <div class="hidden">
@@ -71,8 +71,8 @@
                 />
 
                 <div class="text-left md:col-span-2 relative">
-                    <label for="msg" class="block">Message <span class="text-rose">*</span></label>
-                    <textarea type="msg" name="msg" class="w-full text-sm" v-model="msg" rows="10" placeholder="Please enter your message"/>
+                    <label for="msg" class="form__label block">Message <span class="text-rose">*</span></label>
+                    <textarea type="msg" name="msg" class="form__textarea w-full text-sm" v-model="msg" rows="10" placeholder="Please enter your message"/>
                     <Transition name="fade-up">
                         <span v-if="errors['msg']" class="absolute top-full left-0 text-xs text-rose" >{{ errors['msg'] }}</span>
                     </Transition>
@@ -112,15 +112,16 @@
                     <Checkbox
                         v-model="terms"
                         name="terms"
+                        class="checkbox--green"
                         label='I agree to the terms and conditions&nbsp;<span class="text-rose"> *</span>'
                         :error="errors['terms']"
                     />
                 </div>
 
                 <div class="text-left col-span-2">
-                    <PrimaryButton color="black" type="submit" :isLoading="isLoading">
+                    <FilledButton type="submit" :isLoading="isLoading" full>
                         Submit
-                    </PrimaryButton>
+                    </FilledButton>
                 </div>
             </div>
         </form>
@@ -131,7 +132,7 @@
 import { ref } from 'vue';
 import { useForm, useField } from "vee-validate";
 import * as yup from "yup";
-import PrimaryButton from '../../components/buttons/PrimaryButton.vue';
+import FilledButton from '../../components/buttons/FilledButton.vue';
 import { useSnackbar } from '@/store/snackbar.ts'
 import DropZone from '../../components/fields/DropZone.vue'
 import Checkbox from '../../components/fields/Checkbox.vue';

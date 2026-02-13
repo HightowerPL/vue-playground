@@ -13,6 +13,7 @@ export default {
         black: '#1F2937',
         lightBlack: '#283446',
         trueBlack: '#000',
+        orange: '#B75721',
       },
       spacing: {
         '0': '0px',

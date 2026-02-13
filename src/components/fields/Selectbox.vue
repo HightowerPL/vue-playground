@@ -5,7 +5,7 @@
             @click="showOptions = !showOptions">
         </div>
         <div class="select-box__inner-wrapper">
-            <label class="block mb-1">{{ label }} <span v-if="required" class="text-rose">*</span> </label>
+            <label class="form__label mb-1">{{ label }} <span v-if="required" class="text-rose">*</span> </label>
             <button type="button" class="select-box__select" @click="showOptions = !showOptions" :class="[showOptions ? 'open' : '']">
                 <span :class="[model ? '' : 'opacity-50']">
                     {{ model ? options.find(item => item.value == model).text : 'Please select an option' }}

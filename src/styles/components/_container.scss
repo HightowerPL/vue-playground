@@ -1,3 +1,10 @@
+:root {
+    --container-width: 92%;
+    --container-sm-max-width: 1024px;
+    --container-max-width: 1280px;
+    --container-lg-max-width: 1560px;
+}
+
 .container {
     width: var(--container-width);
     max-width: var(--container-max-width);
@@ -10,6 +17,12 @@
     &-lg {
         @extend .container;
         max-width: var(--container-lg-max-width);
+    }
+
+    &-fluid {
+        margin: 0 auto;
+        width: calc(100% - 3rem);
+        max-width: none;
     }
 
 }

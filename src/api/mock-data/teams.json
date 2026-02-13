@@ -1,0 +1,16 @@
+{
+    "home": {
+        "name": "Home Team",
+        "players": [
+            { "id": 12, "name": "Player 1", "position": "PF", "number": 10, "points": 0, "assists": 0, "rebounds": 0, "on_court": false },
+            { "id": 13, "name": "Player 2", "position": "G", "number": 20, "points": 0, "assists": 0, "rebounds": 0, "on_court": false }
+        ]
+    },
+    "away": {
+        "name": "Away Team",
+        "players": [
+            { "id": 14, "name": "Player 3", "position": "C", "number": 30, "points": 0, "assists": 0, "rebounds": 0, "on_court": false },
+            { "id": 15, "name": "Player 4", "position": "SF", "number": 40, "points": 0, "assists": 0, "rebounds": 0, "on_court": false }
+        ]
+    }
+}
