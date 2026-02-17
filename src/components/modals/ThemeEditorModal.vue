@@ -33,10 +33,10 @@
 
 <script setup lang="ts">
 import { OhVueIcon } from 'oh-vue-icons';
-import { useGlobalStore } from '../../store/global.ts';
+import { useGlobalStore } from '@/store/global.ts';
 import { ref } from 'vue';
-import FilledButton from '../../components/buttons/FilledButton.vue';
-import RoundedButton from '../../components/buttons/RoundedButton.vue';
+import FilledButton from '@/components/buttons/FilledButton.vue';
+import RoundedButton from '@/components/buttons/RoundedButton.vue';
 
 const globalStore = useGlobalStore()
 const sidebarBgColor = ref('#1F2937');

@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import QuoteCard from '../../components/cards/QuoteCard.vue'
+import QuoteCard from '@/components/cards/QuoteCard.vue'
 
 
 const quotes = [

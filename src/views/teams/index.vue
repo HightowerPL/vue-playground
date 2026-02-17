@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import DataTable from '../../components/tables/DataTable.vue';
+import DataTable from '@/components/tables/DataTable.vue';
 
 const teams = ref<Array<{ name: string; players: string[] }>>([
     { name: 'Team A', players: ['Alice', 'Bob'] },

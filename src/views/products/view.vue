@@ -17,8 +17,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 // @ts-ignore
-import { apiGetProducts } from '../../api/products.js'
-import ProductCard from '../../components/cards/ProductCard.vue'
+import { apiGetProducts } from '@/api/products.js'
+import ProductCard from '@/components/cards/ProductCard.vue'
 
 interface Product {
     id: number;

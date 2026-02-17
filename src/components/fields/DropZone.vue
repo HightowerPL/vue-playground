@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import UploadIcon from '../../assets/icons/upload-icon.svg'
+import UploadIcon from '@/assets/icons/upload-icon.svg'
 
 const props = defineProps({
         modelValue: [String, Number],

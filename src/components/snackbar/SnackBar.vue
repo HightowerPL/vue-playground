@@ -37,8 +37,8 @@
 
   <script setup lang="ts">
     import { computed } from 'vue'
-    import { useSnackbar } from '../../store/snackbar'
-    import closeIcon from '../../assets/icons/close-icon.svg'
+    import { useSnackbar } from '@/store/snackbar'
+    import closeIcon from '@/assets/icons/close-icon.svg'
 
     const snackbar = useSnackbar()
 

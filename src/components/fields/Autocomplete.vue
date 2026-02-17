@@ -54,10 +54,10 @@
 
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import Loader from '../../components/loader/Loader.vue';
+import Loader from '@/components/loader/Loader.vue';
 // @ts-ignore
-import useDebouncedRef from '../../hooks/useDebouncedRef';
-import searchIcon from '../../assets/icons/search-icon.svg';
+import useDebouncedRef from '@/hooks/useDebouncedRef';
+import searchIcon from '@/assets/icons/search-icon.svg';
 
 const isLoading = ref(false);
 const searchAutocompleteKeyword = useDebouncedRef('', 1000);

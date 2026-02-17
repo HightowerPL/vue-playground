@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { motion } from "motion-v";
 // @ts-ignore
-import apiGetCats from '../../api/cats.js';
+import apiGetCats from '@/api/cats.js';
 import { ref, onMounted } from 'vue';
 
 interface Cat {

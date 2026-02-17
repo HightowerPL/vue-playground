@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-    import LoaderVue from '../../components/loader/Loader.vue';
+    import LoaderVue from '@/components/loader/Loader.vue';
 
     defineProps({
       color: {

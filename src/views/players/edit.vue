@@ -91,10 +91,10 @@
 </template>
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import Textfield from '../../components/fields/Textfield.vue';
-import FilledButton from '../../components/buttons/FilledButton.vue';
-import OutlinedButton from '../../components/buttons/OutlinedButton.vue';
-import Multibox from '../../components/fields/Multibox.vue';
+import Textfield from '@/components/fields/Textfield.vue';
+import FilledButton from '@/components/buttons/FilledButton.vue';
+import OutlinedButton from '@/components/buttons/OutlinedButton.vue';
+import Multibox from '@/components/fields/Multibox.vue';
 
 const positions = ref<Array<String>>([]);
 const fname = ref<string>('');

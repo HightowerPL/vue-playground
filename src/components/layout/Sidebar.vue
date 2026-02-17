@@ -44,9 +44,9 @@
 <script setup lang="ts">
 import { OhVueIcon } from 'oh-vue-icons';
 import { ref, watch } from 'vue';
-import { useGlobalStore } from '../../store/global.ts';
+import { useGlobalStore } from '@/store/global.ts';
 import { storeToRefs } from 'pinia';
-import Toggle from '../../components/fields/Toggle.vue';
+import Toggle from '@/components/fields/Toggle.vue';
 
 const { isSidebarOpen, isDarkMode } = storeToRefs(useGlobalStore());
 

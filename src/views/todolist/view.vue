@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
     import { ref } from 'vue'
-    import { useSnackbar } from '../../store/snackbar';
+    import { useSnackbar } from '@/store/snackbar';
     import { OhVueIcon } from 'oh-vue-icons';
 
     const todos = ref<string[]>([])

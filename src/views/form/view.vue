@@ -132,13 +132,13 @@
 import { ref } from 'vue';
 import { useForm, useField } from "vee-validate";
 import * as yup from "yup";
-import FilledButton from '../../components/buttons/FilledButton.vue';
+import FilledButton from '@/components/buttons/FilledButton.vue';
 import { useSnackbar } from '@/store/snackbar.ts'
-import DropZone from '../../components/fields/DropZone.vue'
-import Checkbox from '../../components/fields/Checkbox.vue';
-import Textfield from '../../components/fields/Textfield.vue';
-import Selectbox from '../../components/fields/Selectbox.vue';
-import Multibox from '../../components/fields/Multibox.vue';
+import DropZone from '@/components/fields/DropZone.vue'
+import Checkbox from '@/components/fields/Checkbox.vue';
+import Textfield from '@/components/fields/Textfield.vue';
+import Selectbox from '@/components/fields/Selectbox.vue';
+import Multibox from '@/components/fields/Multibox.vue';
 
 const isLoading = ref(false)
 const snackbar = useSnackbar()

@@ -87,7 +87,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import Checkbox from '../../../components/fields/Checkbox.vue';
+import Checkbox from '@//components/fields/Checkbox.vue';
 
 defineProps({
     isOpen: {

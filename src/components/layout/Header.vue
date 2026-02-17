@@ -25,8 +25,8 @@
 </template>
 
 <script setup lang="ts">
-import BurgerButton from '../../components/buttons/BurgerButton.vue';
-import { useGlobalStore } from '../../store/global.ts';
+import BurgerButton from '@/components/buttons/BurgerButton.vue';
+import { useGlobalStore } from '@/store/global.ts';
 
 const globalStore = useGlobalStore();
 </script>

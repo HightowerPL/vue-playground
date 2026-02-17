@@ -69,14 +69,14 @@
 </template>
 
 <script setup lang="ts">
-import CardTemplate from '../../components/cards/CardTemplate.vue';
-import RosterCard from '../../components/cards/RosterCard.vue';
-import CourtView from '../../components/cards/CourtView.vue';
+import CardTemplate from '@/components/cards/CardTemplate.vue';
+import RosterCard from '@/components/cards/RosterCard.vue';
+import CourtView from '@/components/cards/CourtView.vue';
 import { onMounted, ref, computed } from 'vue';
 import { Play } from '@/types/match.ts';
 import { Point } from '@/types/points.ts';
 
-import teamsJSON from '../../api/mock-data/teams.json';
+import teamsJSON from '@/api/mock-data/teams.json';
 import MatchSidebar from './components/MatchSidebar.vue';
 
 interface TeamsMap {

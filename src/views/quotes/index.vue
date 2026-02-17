@@ -70,7 +70,7 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
-import quotesJSON from '../../api/mock-data/quotes.json';
+import quotesJSON from '@/api/mock-data/quotes.json';
 import { OhVueIcon } from 'oh-vue-icons';
 
 const INTERVAL_MS = 12000;
