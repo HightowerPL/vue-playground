@@ -2,14 +2,14 @@
     <div class="flex flex-col justify-start w-custom max-w-[750px] mx-auto py-8 xl:pt-10">
         <h1 class="text-xl font-bold mb-9 text-green">Snackbar</h1>
 
-        <div class="grid gap-4">
+        <Card class="grid gap-4">
 
             <div class="text-left">
-                <label for="msg" class="block mb-1 text-green font-bold">Message</label>
+                <label for="msg" class="form__label block mb-1 text-green font-bold">Message</label>
                 <textarea
                     type="text"
                     name="msg"
-                    class="border border-green bg-black text-white p-2 w-full"
+                    class="form__textarea w-full"
                     v-model="msg"
                     rows="5"
                     placeholder="Please enter your example message"
@@ -32,7 +32,7 @@
 
             </div>
 
-        </div>
+        </Card>
 
     </div>
 </template>

@@ -3,10 +3,10 @@
         <h1 class="text-xl text-green font-bold mb-9">To Do List</h1>
 
         <div class="w-full max-w-[600px] mx-auto">
-            <form @submit.prevent="addToDo" class="flex gap-2 relative">
-                <input class="border border-green p-3 bg-black text-white outline-none w-full" v-model="newToDo" name="add-to-do" placeholder="Enter to do..." >
+            <form @submit.prevent="addToDo" class="flex gap-2 relative border border-green">
+                <input class="form__input  p-3outline-none w-full" v-model="newToDo" name="add-to-do" placeholder="Enter to do..." >
                 <button
-                    class="btn btn-square"
+                    class="btn btn-square btn--filled"
                     type="submit">
                     <span class="btn__inner">
                         <OhVueIcon name="md-addbox"/>
@@ -16,7 +16,7 @@
 
             <div class="mt-6">
                 <Transition name="slide-in" mode="out-in">
-                    <TransitionGroup name="slide-in" tag="ol"  v-if="todos.length > 0">
+                    <TransitionGroup name="slide-in" tag="ol" v-if="todos.length > 0" class="grid gap-1">
                         <li v-for="(item, index) in todos" :key="item" 
                             class="flex items-center justify-between mb-0.5 py-3 pl-4 pr-1 bg-rose text-black relative">
                             <p class=" grow text-left flex items-center gap-4">
@@ -24,17 +24,17 @@
                                 <span class="text-md ">{{ item }}</span>
                             </p>
                             <button
-                                class="btn-red btn btn-square"
+                                class="btn-red btn btn-square btn--filled"
                                 type="button"
-                                @click="removeItem(index)">
+                                @click="removeItem(index)"
+                            >
                                 <span class="btn__inner">
                                     <OhVueIcon name="fa-trash"/>
-
                                 </span>
                             </button>
                         </li>
                     </TransitionGroup>
-                    <p class="text-white" v-else>
+                    <p class="" v-else>
                         No todos for today!
                     </p>
                 </Transition>

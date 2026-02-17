@@ -23,7 +23,7 @@
     </div>
 
     <div class="section">
-      <div class="container-sm text-white text-center">
+      <div class="container-sm  text-center">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi aspernatur, labore recusandae eum nulla ducimus quisquam dolorum. Voluptas, ut quo amet error quae sed neque cum nemo cumque officiis provident?
         </p>

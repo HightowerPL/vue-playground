@@ -43,6 +43,9 @@
 .blockquote {
     @apply bg-lightBlack p-10 shadow-md flex flex-col items-start gap-8 text-white text-left;
 
+    .light-theme & {
+        @apply bg-white text-black
+    }
     &__quote {
         @apply relative;
 

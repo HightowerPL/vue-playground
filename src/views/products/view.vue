@@ -4,7 +4,7 @@
             <div class="filters bg-green min-h-[400px] ">
                 
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 lg:gap-6 2xl:gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 ">
                 <template v-if="products.length > 0">
                     <ProductCard v-for="product in products" :key="product.id" :product="product" />
                 </template>

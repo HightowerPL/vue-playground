@@ -11,6 +11,7 @@ import OutlinedButton from './components/Buttons/OutlinedButton.vue'
 import EditTeamModal from './components/modals/EditTeamModal.vue'
 import Checkbox from './components/fields/Checkbox.vue';
 import Textfield from './components/fields/Textfield.vue';
+import CardTemplate from './components/cards/CardTemplate.vue'
 
 addIcons(
     RiDoubleQuotesL,
@@ -48,6 +49,7 @@ app.component("OutlinedButton", OutlinedButton);
 app.component("FilledButton", FilledButton);
 app.component("EditTeamModal", EditTeamModal);
 app.component("Checkbox", Checkbox)
+app.component("Card", CardTemplate)
 app.component("Textfield", Textfield);
 app.component("v-icon", OhVueIcon);
 app.component('SlideUpDown', SlideUpDown)

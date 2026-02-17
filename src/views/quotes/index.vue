@@ -4,7 +4,7 @@
         <div class="w-1/2 h-1/2 flex items-center justify-center">
             <Transition name="fade-up" mode="out-in">
                 <div v-if="!isDrawing">
-                    <p class="text-2xl italic relative" >
+                    <p class="text-3xl italic relative" >
                         <OhVueIcon
                             class="fill-green w-8 h-8 absolute bottom-3/4 right-[100%] mr-2"
                             name="ri-double-quotes-l"
@@ -15,7 +15,7 @@
                             name="ri-double-quotes-l"
                         />
                     </p>
-                    <p class="text-xs mt-8">--  {{ selectedQuote.author }}  --</p>
+                    <p class="text-sm mt-10">--  {{ selectedQuote.author }}  --</p>
                 </div>
                 <div v-else-if="!isFirstLoaded" class="dots-loader">
                     <span></span>
@@ -163,10 +163,10 @@ const drawQuote = () => {
 
     span {
         display: inline-block;
-        width: 4px;
-        height: 4px;
+        width: 8px;
+        height: 8px;
         border-radius: 100%;
-        background-color: white;
+        background-color: var(--color-white);
         animation-name: lifitng;
         animation-duration: 2s;
         animation-iteration-count: infinite;
@@ -174,7 +174,13 @@ const drawQuote = () => {
 
         &:nth-child(2) { animation-delay: .2s }
         &:nth-child(3) { animation-delay: .4s }
+
+        .light-theme & {
+            background-color: var(--color-green)
+        }
     }
+
+    
 }
 
 @keyframes lifitng {

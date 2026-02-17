@@ -3,7 +3,18 @@
     --card-font-color: var(--color-white);
     --card-border-radius: var(--border-radius);
     --card-padding: 24px;
-    --card-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1), 0 4px 25px rgba(0, 0, 0, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(0, 0, 0, 0.1), 0 4px 10px rgba(0, 0, 0, 0.1), 0 4px 5px rgba(0, 0, 0, 0.1);
+    --card-box-shadow: 
+        0 4px 30px rgba(0, 0, 0, 0.5), 
+        0 4px 25px rgba(0, 0, 0, 0.5), 
+        0 4px 20px rgba(0, 0, 0, 0.5), 
+        0 4px 15px rgba(0, 0, 0, 0.5), 
+        0 4px 10px rgba(0, 0, 0, 0.5), 
+        0 4px 5px rgba(0, 0, 0, 0.5);
+
+    .light-theme {
+        --card-bg-color: var(--color-white);
+        --card-font-color: var(--color-main);
+    }
 }
 
 .card {
@@ -31,6 +42,5 @@
         --fields-label-font-color: var(--color-black);
         --fields-placeholder-color: var(--color-white-transparent);
         --fields-font-color: #fff;
-
     }
 }

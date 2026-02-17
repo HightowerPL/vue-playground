@@ -45,6 +45,43 @@
 
 }
 
+.light-theme {
+    --fields-border-color-error: var(--color-rose);
+    --fields-bg-color: var(--color-light-grey);
+    --fields-bg-color-dark: rgba(0, 0, 0, 0.25);
+    --fields-font-color: var(--color-main);
+    --fields-placeholder-color: var(--color-main);
+    --fields-label-font-color: var(--color-main);
+
+    --select-box-select-bg: var(--fields-bg-color);
+    --select-box-select-color: var(--color-main);
+    --select-box-select-border: var(--fields-border);
+    --select-box-option-bg: var(--color-white);
+    --select-box-option-font-color: var(--color-black);
+    --select-box-dropdown-color: var(--color-green);
+
+    --multibox-bg-color: var(--fields-bg-color);
+    --multibox-border: var(--fields-border);
+    --multibox-font-color: var(--fields-font-color);
+    --multibox-placeholder-color: var(--fields-placeholder-color);
+
+    --multibox-search-bg-color: var(--fields-bg-color);
+
+    --multibox-dropdown-bg-color: var(--color-light-grey);
+    --multibox-dropdown-font-color: var(--color-main);
+    --multibox-dropdown-border: var(--fields-border);
+    --multibox-dropdown-option-hover-bg-color: var(--fields-bg-color-dark);
+
+    --multibox-tile-bg-color: var(--color-green);
+    --multibox-tile-font-color: var(--color-white);
+    --multibox-tile-hover-bg-colorr: var(--color-rose);
+
+    --multibox-footer-border-top-color: var(--color-green);
+    --multibox-footer-btn-color: var(--color-blue);
+    --multibox-footer-btn-hover-color: var(--color-rose);
+    --multibox-footer-btn-font-color: var(--color-white);
+}
+
 .form {
 
     &__input,

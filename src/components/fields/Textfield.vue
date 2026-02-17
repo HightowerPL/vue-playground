@@ -10,6 +10,7 @@
                 model ? 'filled' : '',
                 errorMessage ? 'border-rose' : '',
             ]"
+            :rows="rows"
             :required
             :placeholder="placeholder"
         >
@@ -47,6 +48,10 @@ const props = defineProps({
     required: {
         type: Boolean,
         default: false
+    },
+    rows: {
+        type: String,
+        default: '2'
     }
 })
 </script>

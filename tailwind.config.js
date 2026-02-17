@@ -43,7 +43,8 @@ export default {
         m: ['20px', '1.25em'],
         lg: ['24px', '1.25em'],
         xl: ['32px', '1.25em'],
-        xxl: ['48px', '1.25em']
+        xxl: ['48px', '1.25em'],
+        '3xl': ['72px', '1.25em']
       },
       borderRadius: {
         xxl: '48px'

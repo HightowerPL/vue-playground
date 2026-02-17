@@ -2,7 +2,7 @@
     <div class="">
         <label 
             v-bind="$attrs"
-            class="field-bg hover h-full flex justify-center items-center relative transition-all ease-in-out text-center border border-transparent text-white open-sans-vp font-light p-4 mb-0"
+            class="drop-zone field-bg hover h-full flex justify-center items-center relative transition-all ease-in-out text-center border border-transparent open-sans-vp font-light p-4 mb-0"
             :class="[
                 filename ? 'border-lightBlack text-lightBlack fill-lightBlack' : ''
             ]"
@@ -18,7 +18,7 @@
                 :accept="props.accept">
 
             <div class="w-full relative pointer-events-none mb-2">
-                <UploadIcon class="w-10 fill-white font-normal mx-auto" alt="Upload image"></UploadIcon>
+                <UploadIcon class="drop-zone__icon w-10 font-normal mx-auto" alt="Upload image"></UploadIcon>
                 <span class="block text-sm mb-1">
                     Drop your image here <br/>
                     or <span class="underline">Browse files</span>
@@ -94,3 +94,19 @@ onUnmounted(() => {
 })
 
 </script>
+
+<style lang="scss">
+.drop-zone {
+    color: var(--color-white);
+
+    .light-theme & {
+        color: var(--color-main)
+    }
+
+    &__icon {
+        fill: var(--color-white);
+
+        .light-theme & { fill: inherit; }
+    }
+}
+</style>

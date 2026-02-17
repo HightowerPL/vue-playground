@@ -1,6 +1,11 @@
 .checkbox {
     --checkbox-active-color: var(--fields-bg-color);
     --checkbox-icon-filter: invert(100%) sepia(0%) saturate(3754%) hue-rotate(147deg) brightness(127%) contrast(100%);
+    --checkbox-label-color: #fff;
+
+    .light-theme & {
+        --checkbox-label-color: var(--color-main)
+    }
 
     &--green {   
         --checkbox-active-color: var(--color-green);
@@ -15,7 +20,7 @@
 
     &__label {
         font-size: 14px;
-        color: white;
+        color: var(--checkbox-label-color);
         position: relative;
         width:100%;
         display: flex;
