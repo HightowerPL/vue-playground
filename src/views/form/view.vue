@@ -142,12 +142,11 @@ import Multibox from '../../components/fields/Multibox.vue';
 
 const isLoading = ref(false)
 const snackbar = useSnackbar()
-const form = ref(null)
-const file = ref(null);
+const form = ref<HTMLFormElement | null>(null)
+const file = ref<File | null>(null);
 const fileError = ref('');
 const hobbies = ref([])
-const preview = ref(null);
-const newCountry = ref('')
+const preview = ref<string | null>(null);
 const countries = [
     { value: 'uk', text: 'United Kingdom' },
     { value: 'pl', text: 'Poland' },
@@ -177,7 +176,7 @@ const hobbiesData = [
     { id: 20, name: 'Sewing'}
 ]
 
-const { handleSubmit, isSubmitting, setFieldValue, errors } = useForm({
+const { handleSubmit, setFieldValue, errors } = useForm({
     validationSchema: yup.object({
         fname: yup.string().required('This field is required'),
         lname: yup.string().required('This field is required'),
@@ -188,16 +187,16 @@ const { handleSubmit, isSubmitting, setFieldValue, errors } = useForm({
     }),
 });
 
-const { value: fname } = useField("fname");
-const { value: lname } = useField("lname");
-const { value: email } = useField("email");
-const { value: msg } = useField("msg");
-const { value: country } = useField("country");
-const { value: terms } = useField("terms");
+const { value: fname } = useField<string>("fname");
+const { value: lname } = useField<string>("lname");
+const { value: email } = useField<string>("email");
+const { value: msg } = useField<string>("msg");
+const { value: country } = useField<string>("country");
+const { value: terms } = useField<boolean>("terms");
 
 setFieldValue('terms', false)
 
-const handleForm = handleSubmit((values)=>{
+const handleForm = handleSubmit((_values)=>{
     isLoading.value = true
 
     setTimeout(()=>{
@@ -207,15 +206,14 @@ const handleForm = handleSubmit((values)=>{
             type: 'success',
             operationType: 'form',
             timeout: 5000
-        }, () => {
-            form ? form.value.reset() : void 0;
         })
+        if (form.value) form.value.reset();
     }, 2000)
 })
 
 const previewImage = (data: File) => {
     const reader = new FileReader()
-    reader.onload = function() { preview.value = reader.result }
+    reader.onload = function() { preview.value = reader.result as string }
     reader.readAsDataURL(data);
 }
 

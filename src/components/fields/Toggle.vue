@@ -24,7 +24,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const emits = defineEmits(['update:modelValue']);
-const toggleId = `toggle-${props.name}-${parseInt(Math.random()*10000000000)}`;
+const toggleId = `toggle-${props.name}-${parseInt((Math.random()*10000000000).toString()).toString()}`;
 
 const value = computed({
     get() {

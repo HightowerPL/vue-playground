@@ -24,7 +24,7 @@
 <script setup lang="ts">
     import LoaderVue from '../../components/loader/Loader.vue';
 
-    const props = defineProps({
+    defineProps({
       color: {
         type: String,
         default: 'green'

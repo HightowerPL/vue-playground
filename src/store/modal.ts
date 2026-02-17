@@ -1,9 +1,5 @@
 import { defineStore } from 'pinia';
 
-interface modal {
-  contentId: string,
-}
-
 interface modalOpenOptions {
     id: string,
     hideClose?: boolean,
@@ -27,8 +23,10 @@ export const useModal = defineStore('modal', {
     getClasses: (state) => state.classes
   },
   actions: {
-    open({ id, hideClose, classes = this.classes, msg = this.msg, clickedItem }: modalOpenOptions) {
+    open({ id, hideClose, classes, msg, clickedItem }: modalOpenOptions) {
       this.isModalOpen = true
+      classes = classes ?? this.classes
+      msg = msg ?? this.msg
       this.hideCloseIcon = hideClose ? hideClose : false
       this.contentId = id
       this.classes = classes

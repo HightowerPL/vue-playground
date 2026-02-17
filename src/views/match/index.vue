@@ -73,23 +73,35 @@ import CardTemplate from '../../components/cards/CardTemplate.vue';
 import RosterCard from '../../components/cards/RosterCard.vue';
 import CourtView from '../../components/cards/CourtView.vue';
 import { onMounted, ref, computed } from 'vue';
-import useModalStore from '../../composables/useModalStore.ts';
-import { Point, Play } from '@/types/match.ts';
+import { Play } from '@/types/match.ts';
+import { Point } from '@/types/points.ts';
 
 import teamsJSON from '../../api/mock-data/teams.json';
 import MatchSidebar from './components/MatchSidebar.vue';
 
-const { openModal } = useModalStore();
+interface TeamsMap {
+    [key: string]: {
+        name: string;
+        players: Array<{
+            name: string;
+            position: string;
+            number: number;
+            points?: string | number;
+            assists?: string | number;
+            rebounds?: string | number;
+        }>;
+    };
+}
 
 const plays = ref<Array<Play>>([]);
-const teams = ref<Object>({});
-const activePlay = ref<Play>({});
+const teams = ref<TeamsMap>({});
+const activePlay = ref<Partial<Play>>({});
 const isSidebarOpen = ref(false);
-const highlightedPointId = ref<number | null>(null);
+const highlightedPointId = ref<string | null>(null);
 
 // Memoized play lookup map for O(1) access instead of O(n) with find()
 const playsMap = computed(() => {
-    const map = new Map<number, Play>();
+    const map = new Map<string, Play>();
     plays.value.forEach((play: Play) => {
         if (play.id) {
             map.set(play.id, play);
@@ -104,7 +116,7 @@ onMounted(() => {
 
 const getTeams = () => {
     setTimeout(() => {
-        teams.value = teamsJSON;
+        teams.value = teamsJSON as TeamsMap;
     }, 1000);
 };
 
@@ -112,10 +124,10 @@ const closeSidebar = () => {
     isSidebarOpen.value = false;
 };
 
-const addPlayer = (team: String) => {
+const addPlayer = (team: string) => {
     const newPlayer = {
         id: Date.now(),
-        number: 'XX',
+        number: 99,
         name: 'John Doe',
         position: 'XX',
         points: '0',
@@ -127,13 +139,17 @@ const addPlayer = (team: String) => {
 };
 
 const addNewPoint = (point: Point) => {
-    plays.value.push(point);
-    activePlay.value = point;
+    const play: Play = {
+        id: point.id,
+        position: point.position,
+    };
+    plays.value.push(play);
+    activePlay.value = play;
     isSidebarOpen.value = true;
 };
 
 // Optimized with Map lookup - O(1) instead of O(n)
-const openPlay = (id: number) => {
+const openPlay = (id: string) => {
     const play = playsMap.value.get(id);
     if (play) {
         activePlay.value = play;
@@ -143,25 +159,32 @@ const openPlay = (id: number) => {
 
 const updatePoint = (point: Point) => {
     console.log('updatePoint')
-    const index = plays.value.findIndex((p: Play) => p.id === point.id);
+    const play: Play = {
+        id: point.id,
+        position: point.position,
+    };
+    const index = plays.value.findIndex((p: Play) => p.id === play.id);
 
     if (index !== -1) {
-        plays.value[index] = point;
+        plays.value[index] = { ...plays.value[index], position: play.position };
     }
 };
 
-const highlightPoint = (id: number) => {
+const highlightPoint = (id: string) => {
     highlightedPointId.value = id;
 };
 
-const unhighlightPoint = (id: number) => {
+const unhighlightPoint = (id: string) => {
     if (highlightedPointId.value === id) {
         highlightedPointId.value = null;
     }
 };
 
 const saveAction = (play: Play) => {
-    updatePoint(play);
+    const index = plays.value.findIndex((p: Play) => p.id === play.id);
+    if (index !== -1) {
+        plays.value[index] = play;
+    }
     closeSidebar();
 };
 </script>

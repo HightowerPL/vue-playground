@@ -21,8 +21,18 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
-    product: Object
+interface Product {
+    id: number;
+    image: string;
+    name: string;
+    title: string;
+    description: string;
+    category: string;
+    price: number;
+}
+
+defineProps<{
+    product: Product;
 }>()
 
 </script>

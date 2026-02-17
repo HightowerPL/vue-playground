@@ -4,7 +4,7 @@
         <div class="w-1/2 h-1/2 flex items-center justify-center">
             <Transition name="fade-up" mode="out-in">
                 <div v-if="!isDrawing">
-                    <p class="text-3xl italic relative" >
+                    <p class="text-xl italic relative" >
                         <OhVueIcon
                             class="fill-green w-8 h-8 absolute bottom-3/4 right-[100%] mr-2"
                             name="ri-double-quotes-l"
@@ -73,16 +73,16 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import quotesJSON from '../../api/mock-data/quotes.json';
 import { OhVueIcon } from 'oh-vue-icons';
 
-interface Quote {
-    quote: string,
-    author: string
-}
-
 const INTERVAL_MS = 12000;
 const TICK_MS = 25;
 
-const selectedQuote = ref<Quote>({quote: '', author: ''});
-const quotes = ref<string[]>([]);
+interface Quote {
+    quote: string;
+    author: string;
+}
+
+const selectedQuote = ref<Quote>({ quote: '', author: '' });
+const quotes = ref<Quote[]>([]);
 const isDrawing = ref<boolean>(true);
 const isFirstLoaded = ref<boolean>(false);
 const progress = ref<number>(0);

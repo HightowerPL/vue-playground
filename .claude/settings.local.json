@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(py -3:*)",
+      "Bash(npm run build:*)",
+      "Bash(python:*)",
+      "Bash(git rm:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

@@ -10,14 +10,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
 
-const props = defineProps<{
-    url: {
-        type: String,
-        required: false,
-        default: ''
-    }
-}>();
+withDefaults(defineProps<{
+    url?: string;
+}>(), {
+    url: ''
+});
 
 </script>

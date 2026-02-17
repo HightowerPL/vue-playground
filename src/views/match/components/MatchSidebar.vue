@@ -22,7 +22,7 @@
                 <h2 class="text-lg">Home</h2>
 
                 <ul class="flex gap-4">
-                    <li v-for="(player, index) in teams.home.players" :key="index" class="player-radio">
+                    <li v-for="(player, index) in teams?.home?.players" :key="index" class="player-radio">
                         <label :for="`player-${player.id}`" class="player-radio__label"># {{  player.number }}</label>
                         <input type="radio" name="player" :value="player.id" :id='`player-${player.id}`' class="player-radio__input">
                     </li>
@@ -31,7 +31,7 @@
                 <h2 class="text-lg">Away</h2>
 
                 <ul class="flex gap-4">
-                    <li v-for="(player, index) in teams.away.players" :key="index" class="player-radio">
+                    <li v-for="(player, index) in teams?.away?.players" :key="index" class="player-radio">
                         <label :for="`player-${player.id}`" class="player-radio__label"># {{  player.number }}</label>
                         <input type="radio" name="player" :value="player.id" :id='`player-${player.id}`' class="player-radio__input">
                     </li>
@@ -87,10 +87,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import CheckboxButtonsList from '../../../components/fields/CheckboxButtonsList.vue';
 import Checkbox from '../../../components/fields/Checkbox.vue';
 
-const props = defineProps({
+defineProps({
     isOpen: {
         type: Boolean,
         required: true
@@ -105,7 +104,7 @@ const props = defineProps({
     }
 });
 
-const team = ref('');
+
 const desc = ref('');
 const type = ref('');
 
@@ -121,9 +120,7 @@ const savePlay = () => {
 
 };
 
-const removePlay = () => {
 
-};
 </script>
 
 <style lang="scss">

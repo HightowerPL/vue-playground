@@ -45,7 +45,7 @@ import { useSnackbar } from '@/store/snackbar.ts'
 const snackbar = useSnackbar()
 const msg = ref('')
 
-const openSnack = (type) => {
+const openSnack = (type: string) => {
     const data = {
         content: msg.value,
         type: type,

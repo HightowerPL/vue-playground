@@ -97,6 +97,11 @@ import OutlinedButton from '../../components/buttons/OutlinedButton.vue';
 import Multibox from '../../components/fields/Multibox.vue';
 
 const positions = ref<Array<String>>([]);
+const fname = ref<string>('');
+const lname = ref<string>('');
+const email = ref<string>('');
+const birth = ref<string>('');
+const height = ref<string>('');
 
 onMounted(() => {
     console.log('Player Edit View Mounted');

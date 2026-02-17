@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
     team: {
         type: Object,
         required: true

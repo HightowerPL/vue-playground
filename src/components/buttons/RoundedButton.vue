@@ -9,11 +9,9 @@
 
 <script setup lang="ts">
 
-const props = defineProps<{
-    type: {
-        type: String,
-        required: false,
-        default: 'button'
-    };
-}>();
+withDefaults(defineProps<{
+    type?: 'button' | 'submit' | 'reset';
+}>(), {
+    type: 'button'
+});
 </script>

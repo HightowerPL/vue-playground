@@ -24,7 +24,7 @@
 <script setup lang="ts">
 const model = defineModel()
 
-const props = defineProps({
+defineProps({
     name: {
         type: String,
         default: 'textfield'

@@ -5,7 +5,7 @@ export const useGlobalStore = defineStore('global', {
     isLoading: false,
     isDarkMode: true,
     isMobile: false,
-    isSidebarOpen: false,
+    isSidebarOpen: true,
     isThemeEditorOpen: false,
   }),
   getters: {
@@ -19,21 +19,36 @@ export const useGlobalStore = defineStore('global', {
     setLoading(loading: boolean) {
       this.isLoading = loading;
     },
+    toggleLoading() {
+      this.isLoading = !this.isLoading;
+    },
     toggleDarkMode() {
       this.isDarkMode = !this.isDarkMode;
       this.isDarkMode ? document.body.classList.remove('light-theme') : document.body.classList.add('light-theme');
     },
-    toggleThemeEditor(isOpen: boolean) {
-      this.isThemeEditorOpen = isOpen;
+    setDarkMode(value: boolean) {
+      this.isDarkMode = value;
     },
     setMobile(isMobile: boolean) {
       this.isMobile = isMobile;
     },
+    toggleMobile() {
+      this.isMobile = !this.isMobile;
+    },
     toggleSidebar() {
       this.isSidebarOpen = !this.isSidebarOpen;
     },
+    setSidebar(value: boolean) {
+      this.isSidebarOpen = value;
+    },
     hideSidebar() {
       this.isSidebarOpen = false;
-    }
+    },
+    toggleThemeEditor(isOpen?: boolean) {
+      this.isThemeEditorOpen = isOpen !== undefined ? isOpen : !this.isThemeEditorOpen;
+    },
+    setThemeEditor(value: boolean) {
+      this.isThemeEditorOpen = value;
+    },
   },
 });

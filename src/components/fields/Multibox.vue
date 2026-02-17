@@ -82,13 +82,17 @@
   import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
   import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
   
+  interface MultiboxOption {
+    [key: string]: any
+  }
+
   const props = defineProps({
     options: {
-      type: Array,
+      type: Array as () => MultiboxOption[],
       required: true
     },
     modelValue: {
-      type: Array,
+      type: Array as () => any[],
       default: () => []
     },
     placeholder: {
@@ -119,8 +123,8 @@
   
   const emit = defineEmits(['update:modelValue'])
   
-  const dropdownRef = ref(null)
-  const searchInputRef = ref(null)
+  const dropdownRef = ref<HTMLElement | null>(null)
+  const searchInputRef = ref<HTMLInputElement | null>(null)
   const isOpen = ref(false)
   const searchQuery = ref('')
   
@@ -153,7 +157,7 @@
     }
   }
   
-  const toggleOption = (option) => {
+  const toggleOption = (option: MultiboxOption) => {
     const newValue = [...props.modelValue]
     const index = newValue.indexOf(option[props.trackBy])
     
@@ -166,7 +170,7 @@
     emit('update:modelValue', newValue)
   }
   
-  const removeItem = (item) => {
+  const removeItem = (item: MultiboxOption) => {
     const newValue = props.modelValue.filter(id => id !== item[props.trackBy])
     emit('update:modelValue', newValue)
   }
@@ -174,7 +178,7 @@
   // Memoized selection check using Set for O(1) lookup
   const selectedSet = computed(() => new Set(props.modelValue));
 
-  const isSelected = (option) => {
+  const isSelected = (option: MultiboxOption) => {
     return selectedSet.value.has(option[props.trackBy])
   }
   
@@ -187,8 +191,8 @@
     emit('update:modelValue', [])
   }
   
-  const handleClickOutside = (event) => {
-    if (dropdownRef.value && !dropdownRef.value.contains(event.target)) {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
       isOpen.value = false
     }
   }

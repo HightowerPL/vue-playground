@@ -34,10 +34,18 @@
 
 <script setup lang="ts">
 import { motion } from "motion-v";
+// @ts-ignore
 import apiGetCats from '../../api/cats.js';
 import { ref, onMounted } from 'vue';
 
-const cats = ref([]);
+interface Cat {
+    id: string;
+    url: string;
+    width?: number;
+    height?: number;
+}
+
+const cats = ref<Cat[]>([]);
 
 const setObserver = () => {
     const options = {
@@ -50,7 +58,8 @@ const setObserver = () => {
         getCats();
     }, options);
 
-    observer.observe(document.querySelector('#load-more-trigger'));
+    const trigger = document.querySelector('#load-more-trigger');
+    if (trigger) observer.observe(trigger);
 }
 onMounted(() => {
     setTimeout(() => {
@@ -61,7 +70,7 @@ onMounted(() => {
 
 const getCats = () => {
     apiGetCats()
-        .then((response: Object) => {
+        .then((response: any) => {
             if (cats.value.length === 0) {
                 cats.value = response.data;
             } else {

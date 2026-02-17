@@ -42,7 +42,7 @@
 
     const snackbar = useSnackbar()
 
-    const props = defineProps({
+    defineProps({
       isAuthLayout: {
         type: Boolean,
         default: false,

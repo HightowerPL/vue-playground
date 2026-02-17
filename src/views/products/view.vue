@@ -16,10 +16,21 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+// @ts-ignore
 import { apiGetProducts } from '../../api/products.js'
 import ProductCard from '../../components/cards/ProductCard.vue'
 
-const products = ref([])
+interface Product {
+    id: number;
+    image: string;
+    name: string;
+    title: string;
+    description: string;
+    category: string;
+    price: number;
+}
+
+const products = ref<Product[]>([])
 
 onMounted(async () => {
     getProducts()
@@ -27,7 +38,7 @@ onMounted(async () => {
 
 const getProducts = () => {
     apiGetProducts()
-        .then((response: object) => {
+        .then((response: { data: Product[] }) => {
             products.value = response.data
         })
 }

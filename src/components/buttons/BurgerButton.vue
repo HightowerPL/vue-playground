@@ -12,10 +12,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useGlobalStore } from '@/store/global.ts';
-const globalStore = useGlobalStore();
-
 </script>
 
 <style scoped lang="scss">

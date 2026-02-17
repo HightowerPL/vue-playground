@@ -62,7 +62,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps,ref } from 'vue';
 import OutlinedButton from '../buttons/OutlinedButton.vue';
 import CardTemplate from './CardTemplate.vue';
 
@@ -72,11 +71,15 @@ interface Team {
         name: string;
         position: string;
         number: number;
+        points?: string | number;
+        assists?: string | number;
+        rebounds?: string | number;
     }>
 }
 
-const props = defineProps<{
-    team: Team
+defineProps<{
+    team: Team;
+    title?: string;
 }>();
 
 </script>

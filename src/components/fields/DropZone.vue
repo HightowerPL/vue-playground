@@ -59,24 +59,25 @@ const events = ['dragenter', 'dragover', 'dragleave', 'drop']
 const error = ref('')
 
 const emit = defineEmits<{
-    (e:"upload", files: File[]):void
+    (e:"upload", file: File):void
 }>()
 
 const entering = ref(false)
 
-function validateFile(file) {
+function validateFile(file: File) {
     return file.type.includes('image') ? true : false
 }
 
-function handleDrop(e: Event) {
-    handleUpload(e.dataTransfer.files[0])
+function handleDrop(e: DragEvent) {
+    handleUpload(e.dataTransfer!.files[0])
 }
 
 function handleInput(e: Event) {
-    handleUpload(e.target.files[0])
+    const target = e.target as HTMLInputElement;
+    if (target && target.files) handleUpload(target.files[0])
 }
 
-function handleUpload(file) {
+function handleUpload(file: File) {
     if (validateFile(file)) {
         error.value = ''
         emit('upload', file)

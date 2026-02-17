@@ -50,7 +50,7 @@
     import { useSnackbar } from '../../store/snackbar';
     import { OhVueIcon } from 'oh-vue-icons';
 
-    const todos = ref([])
+    const todos = ref<string[]>([])
     const newToDo = ref('')
     const snackbar = useSnackbar()
 
@@ -69,7 +69,7 @@
         }
     }
 
-    const removeItem = (index) => {
+    const removeItem = (index: number) => {
         todos.value.splice(index, 1)
     }
 

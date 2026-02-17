@@ -1,10 +1,9 @@
 import { defineStore } from 'pinia';
 
 interface snackBarType {
-  isSnackbarOpen?: boolean,
   content: string | object,
-  type: 'success' | 'error',
-  operationType: string,
+  type: string,
+  operationType: string | null,
   buttonUrl?: string,
   timeout?: number,
 }
@@ -31,8 +30,8 @@ export const useSnackbar = defineStore('snackbar', {
       this.isSnackbarOpen = true
       this.content = typeof data.content === 'object' ? Object.values(data.content).join(' ') : data.content,
       this.type = data.type
-      this.operationType = data.operationType
-      this.buttonUrl = data.buttonUrl
+      this.operationType = data.operationType ?? ''
+      this.buttonUrl = data.buttonUrl ?? ''
       this.timeout = data.timeout ?? 8000
 
       setTimeout(() => this.hide(), this.timeout)

@@ -78,7 +78,8 @@ const startDrag = (pointId: string, event: MouseEvent) => {
 
 const lerp = (start: number, end: number, factor: number) => start + (end - start) * factor;
 
-const handleMouseMove = (event: MouseEvent) => {
+const handleMouseMove = (evt: Event) => {
+    const event = evt as MouseEvent;
     if (!isDragging.value || !selectedPointId.value) return;
     
     const courtElement = document.querySelector('#court-icon') as HTMLElement;
@@ -90,8 +91,8 @@ const handleMouseMove = (event: MouseEvent) => {
     const y = event.clientY - rect.top;
 
     const point = props.points.find(p => p.id === selectedPointId.value);
-    const pointX = point?.x;
-    const pointY = point?.y;
+    const pointX = point?.position.x ?? x;
+    const pointY = point?.position.y ?? y;
 
     const lerpX = lerp(pointX, x, 0.1);
     const lerpY = lerp(pointY, y, 0.1);
@@ -99,21 +100,20 @@ const handleMouseMove = (event: MouseEvent) => {
     if (point) {
         const updatedPoint: Point = {
             ...point,
-            x: lerpX,
-            y: lerpY
+            position: { x: lerpX, y: lerpY }
         };
-                    emit('pointUpdate', updatedPoint);
+        emit('pointUpdate', updatedPoint);
 
     }
 };
 
-const handleMouseUp = () => {
+const handleMouseUp = (_evt: Event) => {
     isDragging.value = false;
     selectedPointId.value = null;
 };
 
 onMounted(() => {
-    const courtIcon = document.querySelector('#court-icon');
+    const courtIcon = document.querySelector('#court-icon') as HTMLElement | null;
 
     if (courtIcon) {
         courtIcon.addEventListener('mousemove', handleMouseMove);
@@ -122,7 +122,7 @@ onMounted(() => {
 });
 
 onUnmounted(() => {
-    const courtIcon = document.querySelector('#court-icon');
+    const courtIcon = document.querySelector('#court-icon') as HTMLElement | null;
 
     if (courtIcon) {
         courtIcon.removeEventListener('mousemove', handleMouseMove);

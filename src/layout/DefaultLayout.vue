@@ -29,7 +29,7 @@ import ModalController from '../components/modals/ModalController.vue';
 
 const globalStore = useGlobalStore();
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((_to, _from, next) => {
     globalStore.hideSidebar()
     next()
 });

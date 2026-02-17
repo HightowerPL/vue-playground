@@ -5,9 +5,10 @@ import DefaultLayout from './layout/DefaultLayout.vue'
 import { router } from './router'
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { RiDoubleQuotesL, MdSkipnextRound, BiChatLeftQuoteFill, BiArrowRepeat, BiPeopleFill, IoBasketballSharp, FaPeopleArrows, IoPencil, IoPencilSharp, FaChevronDown, FaCat, FaFlag, RiZhihuFill, IoCartSharp, RiHome5Fill, CoTodoist, SiFormstack, FaWpforms, MdAddbox, FaTrash, IoCloseOutline, BiPauseFill, BiPlayFill, BiArrowRightCircleFill } from "oh-vue-icons/icons";
+// @ts-ignore
 import SlideUpDown from 'vue-slide-up-down'
-import FilledButton from './components/Buttons/FilledButton.vue'
-import OutlinedButton from './components/Buttons/OutlinedButton.vue'
+import FilledButton from './components/buttons/FilledButton.vue'
+import OutlinedButton from './components/buttons/OutlinedButton.vue'
 import EditTeamModal from './components/modals/EditTeamModal.vue'
 import Checkbox from './components/fields/Checkbox.vue';
 import Textfield from './components/fields/Textfield.vue';

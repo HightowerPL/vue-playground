@@ -55,12 +55,13 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import Loader from '../../components/loader/Loader.vue';
+// @ts-ignore
 import useDebouncedRef from '../../hooks/useDebouncedRef';
 import searchIcon from '../../assets/icons/search-icon.svg';
 
 const isLoading = ref(false);
 const searchAutocompleteKeyword = useDebouncedRef('', 1000);
-const searchResult = ref([]);
+const searchResult = ref<any[]>([]);
 const resultCount = ref(0);
 const showedCount = ref(0);
 const wasWatchUsed = ref(false);
@@ -69,7 +70,7 @@ const inputFocused = ref(false);
 
 const props = defineProps({
     id: {
-        type: [String, Number],
+        type: String,
         required: true,
     },
     apiFn: {
@@ -114,7 +115,7 @@ const handleSelect = (item: Object) => {
     searchResult.value = [];
 }
 
-const handleEnter = (event: Object) => {
+const handleEnter = (event: KeyboardEvent) => {
     if (event.key === "Enter" && resultCount.value > 0 && props.enableEnter) {
         emits('enterPressed', searchAutocompleteKeyword.value)
     }

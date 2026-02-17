@@ -55,7 +55,7 @@ const props = defineProps<{
     zIndex: number,
     team: {
         name: string;
-        players: string[];
+        players: { number: string; name: string; position: string }[];
     };
 }>();
 

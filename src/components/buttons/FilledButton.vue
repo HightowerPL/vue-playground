@@ -23,7 +23,7 @@
 <script setup lang="ts">
   import LoaderVue from '../../components/loader/Loader.vue';
 
-  const props = defineProps({
+  defineProps({
     color: { type: String, default: 'green' },
     isLoading: { type: Boolean, default: false },
     small: { type: Boolean, default: false },

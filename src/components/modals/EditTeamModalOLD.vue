@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <h2>Edit Team</h2>
-        <form @submit.prevent="submit">
+        <form @submit.prevent>
             <div>
                 <label for="name">Team Name</label>
                 <input type="text" id="name" v-model="team.name" />
@@ -40,10 +40,10 @@
 
 <script setup lang="ts">
 
-const props = defineProps<{
+defineProps<{
     team: {
         name: string;
-        players: string[];
+        players: { number: string; name: string; position: string; points: string; assists: string; rebounds: string }[];
     };
 }>();
 

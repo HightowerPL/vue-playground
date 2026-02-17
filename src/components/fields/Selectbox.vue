@@ -8,7 +8,7 @@
             <label class="form__label mb-1">{{ label }} <span v-if="required" class="text-rose">*</span> </label>
             <button type="button" class="select-box__select" @click="showOptions = !showOptions" :class="[showOptions ? 'open' : '']">
                 <span :class="[model ? '' : 'opacity-50']">
-                    {{ model ? options.find(item => item.value == model).text : 'Please select an option' }}
+                    {{ model ? options.find(item => item.value == model)?.text : 'Please select an option' }}
                 </span>
                 <dropdownIcon class="select-box__dropdown"/>
             </button>
@@ -30,13 +30,13 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import dropdownIcon from '@/assets/icons/dropdown-icon.svg';
 import checkIcon from '@/assets/icons/check-icon.svg';
 
 const model = defineModel()
 const showOptions = ref(false);
-const props = defineProps({
+defineProps({
     name: {
         type: String,
         required: true
