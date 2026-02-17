@@ -4,7 +4,7 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "types": ["vitest/globals"],
+    "types": ["vite/client"],
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
