@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 import QuoteCard from '@/components/cards/QuoteCard.vue'
-
+// @ts-ignore
 
 const quotes = [
   {
