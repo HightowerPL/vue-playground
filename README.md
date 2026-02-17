@@ -3,7 +3,7 @@
 A production-ready Vue 3 playground demonstrating advanced patterns and best practices.
 
 ## 🚀 Live Demo
-[Link to deployed version - Vercel/Netlify]
+https://playground-vue.netlify.app/
 
 ## ✨ Features Demonstrated
 
